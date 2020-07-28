@@ -3,46 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/b"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Login">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="180sp"
-        android:id="@+id/imageLog"
-        android:src="@drawable/drug"
-        android:layout_marginBottom="30dp"
         />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
         android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="200dp"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="30dp"
         android:inputType="textPassword"
         />
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:textSize="25sp"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:textSize="30sp"
         android:textStyle="italic"
         android:layout_marginHorizontal="30dp"
-        android:background="@drawable/stylbtn"
+        android:background="@drawable/main"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="30dp"
-        android:text="No Account yet,Create an Account"
+        android:text="Not have an account?, SignUp"
         android:clickable="true"
-        android:textSize="15sp"
+        android:textSize="20sp"
+        android:textColor="#262D51"
         android:gravity="center"
         />
 </LinearLayout>

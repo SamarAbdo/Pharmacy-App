@@ -5,24 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/b"
     android:gravity="center"
     tools:context=".MainActivity">
 
     <Button
-    android:layout_width="wrap_content"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:text="User"
-    android:textSize="30sp"
-    android:textStyle="italic"
-    android:id="@+id/user"
-    android:layout_marginBottom="15dp"
+        android:background="@drawable/main"
+    android:textSize="31sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+android:fontFamily="casual"
+        android:id="@+id/user"
+    android:layout_marginBottom="20dp"
     />
     <Button
-        android:layout_width="wrap_content"
+        android:fontFamily="casual"
+        android:background="@drawable/main"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Owner"
-        android:textSize="30sp"
-        android:textStyle="italic"
+        android:text="Pharmacy owner"
+        android:textSize="31sp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
         android:id="@+id/owner"
         />
 </LinearLayout>
