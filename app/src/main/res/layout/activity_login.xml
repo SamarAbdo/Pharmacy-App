@@ -44,8 +44,8 @@
         android:layout_marginHorizontal="30dp"
         android:text="Not have an account?, SignUp"
         android:clickable="true"
-        android:textSize="20sp"
-        android:textColor="#262D51"
+        android:textSize="15sp"
+        android:textColor="#192B8A"
         android:gravity="center"
         />
 </LinearLayout>
