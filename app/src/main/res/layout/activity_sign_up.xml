@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/edited"
+    android:background="@drawable/full"
     tools:context=".SignUp">
 
     <EditText
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:hint="Username"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="120dp"
         android:id="@+id/userSign"
         />
     <EditText
