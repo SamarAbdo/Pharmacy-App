@@ -8,4 +8,74 @@
     android:background="@drawable/b"
     tools:context=".SignUp">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="200dp"
+        android:id="@+id/userSign"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-Mail"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:inputType="textEmailAddress"
+        android:id="@+id/mail"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:id="@+id/addressSign"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:inputType="textPassword"
+        android:id="@+id/pass"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Username"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/passCon"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:id="@+id/signbtn"
+        android:textStyle="italic"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/main"
+        />
+    <TextView
+        android:id="@+id/signuptxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:text="I have an account, Login"
+        android:clickable="true"
+        android:onClick="onClktxt"
+        android:textSize="15sp"
+        android:textColor="#192B8A"
+        android:gravity="center"
+        />
+
+
 </LinearLayout>

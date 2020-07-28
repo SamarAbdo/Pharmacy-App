@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".Login">
 
-        />
+
 
     <EditText
         android:layout_width="match_parent"

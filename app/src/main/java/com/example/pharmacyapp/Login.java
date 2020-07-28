@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
-Button LoginBtn;
-TextView SignUpTxt;
+    Button LoginBtn;
+    TextView SignUpTxt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,5 @@ TextView SignUpTxt;
     public void onClicktxt(View view) {
         Intent intent=new Intent(this,SignUp.class);
         startActivity(intent);
-
     }
 }
