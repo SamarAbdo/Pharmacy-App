@@ -8,14 +8,29 @@
     android:background="@drawable/full"
     tools:context=".SignUp">
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="120dp"
-        android:id="@+id/userSign"
-        />
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="130dp"
+            android:id="@+id/fname"
+            />
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="130dp"
+            android:id="@+id/lname"
+            />
+
+    </LinearLayout>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

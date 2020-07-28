@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="30dp"
-        android:text="Not have an account?, SignUp"
+        android:text="Not have an account, SignUp"
         android:clickable="true"
         android:onClick="onClicktxt"
         android:textSize="15sp"
