@@ -23,11 +23,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view.getId()==R.id.user){
-            Toast.makeText(MainActivity.this,"User",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(MainActivity.this,Login.class));
+            // Toast.makeText(MainActivity.this,"User",Toast.LENGTH_LONG).show();
+            Intent in=new Intent(MainActivity.this,Login.class);
+            in.putExtra("bool","1");
+            startActivity(in);
+            finish();
         }else if (view.getId()==R.id.owner){
             Toast.makeText(MainActivity.this,"Owner",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(MainActivity.this,Login.class));
+            Intent in=new Intent(MainActivity.this,Login.class);
+            in.putExtra("bool","2");
+            startActivity(in);
+            finish();
         }
     }
 }
