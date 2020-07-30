@@ -3,22 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/full"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Login">
-
-
-
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Pharmacy App"
+    android:layout_gravity="center"
+    android:layout_marginTop="100dp"
+    android:textStyle="bold"
+    android:textSize="20dp"
+    android:textColor="#124963"
+/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         android:id="@+id/userLog"
+        android:drawableLeft="@drawable/person"
         />
     <EditText
+        android:drawableLeft="@drawable/lock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -35,6 +43,7 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:textSize="30sp"
+
         android:id="@+id/loginbtn"
         android:textStyle="italic"
         android:layout_marginHorizontal="30dp"
@@ -50,7 +59,7 @@
         android:clickable="true"
         android:onClick="onClicktxt"
         android:textSize="15sp"
-        android:textColor="#192B8A"
+        android:textColor="#124963"
         android:gravity="center"
         />
 </LinearLayout>

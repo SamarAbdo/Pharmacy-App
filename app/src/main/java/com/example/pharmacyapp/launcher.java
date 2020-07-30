@@ -23,8 +23,8 @@ Animation animation,animation2;
         imageView=findViewById(R.id.imageView);
          animation=AnimationUtils.loadAnimation(this,R.anim.anim_for_launcher);
          animation2= AnimationUtils.loadAnimation(this,R.anim.for_image);
-         textView.setAnimation(animation2);
-         imageView.setAnimation(animation);
+         textView.setAnimation(animation);
+         imageView.setAnimation(animation2);
 
     Thread thread = new Thread(
 
