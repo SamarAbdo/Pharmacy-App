@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AddPharmacy"></activity>
         <activity android:name=".UserRecyclerView"></activity>
         <activity
             android:name=".UserAdapter"

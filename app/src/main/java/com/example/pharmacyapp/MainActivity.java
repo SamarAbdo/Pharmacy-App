@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(in);
             finish();
         }else if (view.getId()==R.id.owner){
-          //  Toast.makeText(MainActivity.this,"Owner",Toast.LENGTH_LONG).show();
+           // Toast.makeText(MainActivity.this,"Owner",Toast.LENGTH_LONG).show();
             Intent in=new Intent(MainActivity.this,Login.class);
             in.putExtra("bool","owner");
             startActivity(in);
