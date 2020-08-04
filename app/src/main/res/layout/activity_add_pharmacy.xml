@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddPharmacy">
+
+    <Button
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Image"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:id="@+id/uploadImage"
+        android:textStyle="italic"
+
+        android:background="@drawable/main"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pharmacy Name"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:id="@+id/addPharmacyName"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pharmacy Address"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:id="@+id/addPharmacyAddress"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:inputType="numberDecimal"
+        android:id="@+id/addPhone"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Facebook Account"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/facebookAcc"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:id="@+id/addPharma"
+        android:textStyle="italic"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/main"
+        />
+
+</LinearLayout>
