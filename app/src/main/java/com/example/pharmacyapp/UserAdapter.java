@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,19 +16,26 @@ import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MViewHolder> {
 
-List<Head> list;
+List<Head> arrayList;
 Context context;
-
-    public UserAdapter(List<Head> list, Context context) {
-        this.list = list;
+public ImageView imageView;
+public TextView name;
+public TextView phone;
+    public UserAdapter(List<Head> arrayList, Context context) {
+        this.arrayList = arrayList;
         this.context = context;
     }
+
+
 
     @NonNull
     @Override
@@ -43,20 +51,27 @@ Context context;
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return arrayList.size();
     }
 
     class MViewHolder extends RecyclerView.ViewHolder {
-         TextView PharmacyName, PharmacyAddress, PharmacyNum, PharmacyImg;
 
         public MViewHolder(@NonNull View itemView) {
             super(itemView);
-            PharmacyAddress = itemView.findViewById(R.id.pharmacyAddress);
+
+imageView=itemView.findViewById(R.id.pharmacyImage);
+name=itemView.findViewById(R.id.pharmacyName);
+phone=itemView.findViewById(R.id.pharmacyPhone);
 
         }
 
         public void bind(int position) {
-            Head head=list.get(position);
+            Head head=arrayList.get(position);
+            name.setText(head.getPharmacyName());
+         phone.setText(head.getPharmacyNum());
+         //TODO: Use Picasso to load images (prevent Memory leak)
+            Picasso.get().load(head.getPharmacyImg()).into(imageView);
+         //imageView.setImageResource(head.getPharmacyImg());
         }
     }
 }

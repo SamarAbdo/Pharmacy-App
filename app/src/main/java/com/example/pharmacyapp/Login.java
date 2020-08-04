@@ -21,14 +21,23 @@ public class Login extends AppCompatActivity {
         signUpTxt=findViewById(R.id.signuptxt);
         username=findViewById(R.id.userLog);
         password=findViewById(R.id.passLog);
-        String type =getIntent().getExtras().getString("bool");
+        Bundle bundle=getIntent().getExtras();
+        final String type =bundle.getString("bool");
         // type "1" for User -- "2" for Owner
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (username.getText().toString().isEmpty())username.setError("Not Valid");
-                if (password.getText().toString().isEmpty())password.setError("Not Valid");
+                if ((username.getText().toString().isEmpty()) || (password.getText().toString().isEmpty())) {
+                    if (username.getText().toString().isEmpty()) username.setError("Not Valid");
+                    if (password.getText().toString().isEmpty()) password.setError("Not Valid");
+                }
+                else {
+                   // if (type.equals("user")) {
+                        Intent intent = new Intent(Login.this, UserRecyclerView.class);
+                        startActivity(intent);
+                   // }
+                }
             }
         });
     }
