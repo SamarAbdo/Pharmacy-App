@@ -30,12 +30,14 @@ Context context;
 public ImageView imageView;
 public TextView name;
 public TextView phone;
-    public UserAdapter(List<Head> arrayList, Context context) {
+public RecycleViewOnItemclick recycleViewOnItemclick;
+
+    public UserAdapter(List<Head> arrayList, Context context ,RecycleViewOnItemclick recycleViewOnItemclick) {
         this.arrayList = arrayList;
         this.context = context;
+
+        this.recycleViewOnItemclick = recycleViewOnItemclick;
     }
-
-
 
     @NonNull
     @Override
@@ -62,7 +64,19 @@ public TextView phone;
 imageView=itemView.findViewById(R.id.pharmacyImage);
 name=itemView.findViewById(R.id.pharmacyName);
 phone=itemView.findViewById(R.id.pharmacyPhone);
+itemView.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        recycleViewOnItemclick.OnItemClick(getAdapterPosition());
+    }
+});
 
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    recycleViewOnItemclick.OnLongItemClick(getAdapterPosition());
+//                }
+//            });
         }
 
         public void bind(int position) {
@@ -73,5 +87,9 @@ phone=itemView.findViewById(R.id.pharmacyPhone);
             Picasso.get().load(head.getPharmacyImg()).into(imageView);
          //imageView.setImageResource(head.getPharmacyImg());
         }
+    }
+    public interface onNoteListener{
+void onNoteclick(int position);
+
     }
 }
