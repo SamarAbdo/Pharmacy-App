@@ -35,6 +35,7 @@ TextView pharmacyName,pharmacyPhone,pharmacyAddress,pharmacyAccount;
            pharmacyName.setText(head.getPharmacyName());
            pharmacyPhone.setText(head.getPharmacyNum());
            imageView.setImageResource(head.getPharmacyImg());
+           //The Address And The Account(Obtional And Invisible Utill It Found) From Database
          //  pharmacyAddress.setText(head.getPharmacyAddress());
          //  pharmacyAccount.setText(head.getPharmacyAccount());
 
