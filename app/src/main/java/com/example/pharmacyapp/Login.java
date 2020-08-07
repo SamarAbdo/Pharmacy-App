@@ -8,11 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
     Button loginBtn;
     TextView signUpTxt;
     EditText username,password;
+
+   String string="";
+    // type "1" for User -- "2" for Owner
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +25,7 @@ public class Login extends AppCompatActivity {
         signUpTxt=findViewById(R.id.signuptxt);
         username=findViewById(R.id.userLog);
         password=findViewById(R.id.passLog);
-        Bundle bundle=getIntent().getExtras();
-        final String type =bundle.getString("bool");
-        // type "1" for User -- "2" for Owner
+
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,10 +35,18 @@ public class Login extends AppCompatActivity {
                     if (password.getText().toString().isEmpty()) password.setError("Not Valid");
                 }
                 else {
-                   // if (type.equals("user")) {
-                        Intent intent = new Intent(Login.this, UserRecyclerView.class);
-                        startActivity(intent);
-                   // }
+                    if(getIntent().getExtras()!=null) {
+                        Bundle bundle = getIntent().getExtras();
+                        final String type = bundle.getString("bool");
+
+                        if (type.equals("user")) {
+                            Intent intent = new Intent(Login.this, UserRecyclerView.class);
+                            startActivity(intent);
+                        } else {
+                            Intent intent = new Intent(Login.this, OwnerRecyclerView.class);
+                            startActivity(intent);
+                        }
+                    }
                 }
             }
         });
@@ -44,6 +54,9 @@ public class Login extends AppCompatActivity {
 
     public void onClicktxt(View view) {
         Intent intent=new Intent(this,SignUp.class);
+        string=getIntent().getExtras().getString("bool");
+        intent.putExtra("bool",string);
+       // Toast.makeText(Login.this,string,Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 }

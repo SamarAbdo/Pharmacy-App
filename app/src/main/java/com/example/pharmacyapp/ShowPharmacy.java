@@ -28,7 +28,7 @@ TextView pharmacyName,pharmacyPhone,pharmacyAddress,pharmacyAccount;
         pharmacyAddress=findViewById(R.id.pharmacyAddress);
         pharmacyAccount=findViewById(R.id.pharmacyAccount);
 
-        Picasso.get().load(R.drawable.ph);
+        Picasso.get().load(R.drawable.elshefa);
 
            Head head = getIntent().getExtras().getParcelable(HEAD);//getParcelableExtra(HEAD);
 

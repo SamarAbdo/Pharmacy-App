@@ -4,11 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.regex.Pattern;
+
 public class SignUp extends AppCompatActivity {
+    private static final Pattern passwordPattern=
+            Pattern.compile("^" +
+                    "(?=.*[0-9])" +         //at least 1 digit
+                   // "(?=.*[a-z])" +         //at least 1 lower case letter
+                    "(?=.*[A-Z])" +         //at least 1 upper case letter
+                    "(?=.*[a-zA-Z])" +      //any letter
+                    //"(?=.*[@#$%^&+=])" +    //at least 1 special character
+                    "(?=\\S+$)" +           //no white spaces
+                    ".{8,}" +               //at least 4 characters
+                    "$");
+
+
     EditText firstName,lastName,password,Conpassword,email,address;
     Button signup;
     @Override
@@ -22,49 +37,121 @@ public class SignUp extends AppCompatActivity {
         address=findViewById(R.id.addressSign);
         email=findViewById(R.id.mail);
         signup=findViewById(R.id.signbtn);
+
+
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!nameOk(firstName.getText().toString()))firstName.setError("First Name not Valid");
-                if(!nameOk(lastName.getText().toString()))lastName.setError("Last Name not Valid");
-                if (!mailOk(email.getText().toString()))email.setError("Not Valid");
-                if (address.getText().toString().isEmpty())address.setError("Not Valid");
-                if (!passOk(password.getText().toString()))password.setError("Not Valid");
-                if (password.getText().toString()!=Conpassword.getText().toString())Conpassword.setError("Not the same password");
 
+                if (!validateFName()||!validateLName()||!validateEmail()||!validateAddress()||!validatePassword()||!validateCPassword())
+                {
+                    return;
+                }
+                else
+                {
+                    if(getIntent().getExtras()!=null) {
+                        Bundle bundle = getIntent().getExtras();
+                        final String type = bundle.getString("bool");
+
+                        if (type.equals("user")) {
+                            Intent intent = new Intent(SignUp.this, UserRecyclerView.class);
+                            startActivity(intent);
+                        } else {
+                            Intent intent = new Intent(SignUp.this, OwnerRecyclerView.class);
+                            startActivity(intent);
+                        }
+                }
+                }
             }
-        });
+        });//
 
     }
-    public boolean nameOk(String s){
-        if (s.isEmpty())return false;
-        for (int i=0;i<s.length();i++)
-            if (s.charAt(i)<='A'||s.charAt(i)>='z')return false;
-        return true;
-    }
-    public boolean passOk(String p){
-        if (p.length()<8)return false;
-        int f=0,l=0;
-        for (int i=0;i<p.length();i++){
-            if(p.charAt(i)>='A'&&p.charAt(i)<='z')f=1;
-            if (p.charAt(i)>='0'&&p.charAt(i)<='9')l=1;
-        }
-        if (f==1&&l==1)return true;
+    public boolean validateFName(){
+        if (firstName.getText().toString().isEmpty()) {
+            firstName.setError("Field can't be empty");
         return false;
-    }
-    public boolean mailOk(String m){
-        if(m.isEmpty())return false;
-        int a=0,b=0,c=0,d=0,e=0;
-        for (int i=0;i<m.length();i++){
-            if (m.charAt(i)>='A'&&m.charAt(i)<='z'&&b==0)a=1;
-            else if (m.charAt(i)=='@'&&a==1&&b==0)b=1;
-            else if (m.charAt(i)>='A'&&m.charAt(i)<='z'&&b==1&&d==0)c=1;
-            else if (m.charAt(i)=='.'&&c==1&&d==0)d=1;
-            else if (m.charAt(i)>='A'&&m.charAt(i)<='z'&&d==1)e=1;
-            else return false;
         }
-        if (e==1)return true;
+        else if (!firstName.getText().toString().matches("[a-z,A-Z]*")) {
+            firstName.setError("Enter only character");
+            return false;
+        }
+        else
+            {
+            firstName.setError(null);
+            return true;
+        }
+    }
+    public boolean validateLName(){
+        if (lastName.getText().toString().isEmpty()) {
+            lastName.setError("Field can't be empty");
         return false;
+        }
+        else if (!lastName.getText().toString().matches("[a-z,A-Z]*")) {
+            lastName.setError("Enter only character");
+            return false;
+        }
+        else
+            {
+        lastName.setError(null);
+            return true;
+        }
+    }
+    public boolean validatePassword(){
+        if (password.getText().toString().isEmpty()) {
+            password.setError("Field can't be empty");
+        return false;
+        }
+        else if (!passwordPattern.matcher(password.getText().toString()).matches()) {
+            password.setError("Password too weak");
+            return false;
+        }
+        else
+            {
+        password.setError(null);
+            return true;
+        }
+    }
+    public boolean validateCPassword(){
+        if (Conpassword.getText().toString().isEmpty()) {
+            Conpassword.setError("Field can't be empty");
+        return false;
+        }
+        else if (!password.getText().toString().equals(Conpassword.getText().toString())) {
+            Conpassword.setError("Password not the same");
+            return false;
+        }
+        else
+            {
+        Conpassword.setError(null);
+            return true;
+        }
+    }
+    public boolean validateEmail(){
+        if (email.getText().toString().isEmpty()) {
+         email.setError("Field can't be empty");
+        return false;
+        }
+        else if (!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()) {
+            email.setError("Enter valid email");
+            return false;
+        }
+        else
+            {
+        email.setError(null);
+            return true;
+        }
+    }
+    public boolean validateAddress(){
+        if (address.getText().toString().isEmpty()) {
+         address.setError("Field can't be empty");
+        return false;
+        }
+
+        else
+            {
+        address.setError(null);
+            return true;
+        }
     }
 
     public void onClktxt(View view) {

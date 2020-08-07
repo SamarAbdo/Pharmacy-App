@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowPharmacy"></activity>
+        <activity android:name=".OwnerRecyclerView"></activity>
+        <activity android:name=".ShowPharmacy" />
         <activity android:name=".AddPharmacy" />
         <activity android:name=".UserRecyclerView" />
         <activity
